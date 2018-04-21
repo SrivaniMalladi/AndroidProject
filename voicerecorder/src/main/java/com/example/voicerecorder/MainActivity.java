@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -29,9 +30,9 @@ public class MainActivity extends AppCompatActivity{
     SpeechRecognizer speechRecognizer;
     Intent mSpeechRecognizerIntent;
 
-    private static final String TAG = "Hello APP!";
+    public static final String TAG = "Hello APP!";
 
-    public static void d(String message){
+    public static void Temp(String message){
         Log.d(TAG,message);
     }
 
@@ -41,6 +42,12 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         checkPermission();
+        addListernerButton();
+        addSpeechReconizer();
+
+    }
+
+    public void addSpeechReconizer() {
 
         speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
         mSpeechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -100,7 +107,9 @@ public class MainActivity extends AppCompatActivity{
 
             }
         });
+    }
 
+    public void addListernerButton() {
 
         editText = (EditText)findViewById(R.id.editText2);
         voiceButton = (ImageButton)findViewById(R.id.imageButton);
@@ -124,12 +133,11 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-
-
-
     }
 
-    private void checkPermission() {
+
+
+    public void checkPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED)) {
                 Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
