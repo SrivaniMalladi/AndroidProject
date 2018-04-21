@@ -20,10 +20,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity{
+public class ListenActivity extends AppCompatActivity{
 
     private ImageButton voiceButton;
     private EditText editText;
@@ -31,8 +32,9 @@ public class MainActivity extends AppCompatActivity{
     Intent mSpeechRecognizerIntent;
 
     public static final String TAG = "Hello APP!";
+    //abstract Temp();
 
-    public static void Temp(String message){
+    public  void Temp(String message){
         Log.d(TAG,message);
     }
 
