@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity{
     Intent mSpeechRecognizerIntent;
 
     private static final String TAG = "Hello APP!";
-v
+
     public static void d(String message){
         Log.d(TAG,message);
     }
