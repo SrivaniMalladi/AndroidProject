@@ -12,6 +12,7 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -27,6 +28,12 @@ public class MainActivity extends AppCompatActivity{
     private EditText editText;
     SpeechRecognizer speechRecognizer;
     Intent mSpeechRecognizerIntent;
+
+    private static final String TAG = "Hello APP!";
+v
+    public static void d(String message){
+        Log.d(TAG,message);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
